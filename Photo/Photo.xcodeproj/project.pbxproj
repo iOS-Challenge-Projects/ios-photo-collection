@@ -13,6 +13,9 @@
 		0478297D23D42B88003BCCD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478297B23D42B88003BCCD9 /* Main.storyboard */; };
 		0478297F23D42B8E003BCCD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0478297E23D42B8E003BCCD9 /* Assets.xcassets */; };
 		0478298223D42B8E003BCCD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478298023D42B8E003BCCD9 /* LaunchScreen.storyboard */; };
+		0478298C23D432E0003BCCD9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478298B23D432E0003BCCD9 /* Photo.swift */; };
+		0478298F23D43382003BCCD9 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478298E23D43382003BCCD9 /* PhotoController.swift */; };
+		0478299223D43A12003BCCD9 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478299123D43A12003BCCD9 /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		0478297E23D42B8E003BCCD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0478298123D42B8E003BCCD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0478298323D42B8E003BCCD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0478298B23D432E0003BCCD9 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0478298E23D43382003BCCD9 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		0478299123D43A12003BCCD9 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,48 @@
 			children = (
 				0478297523D42B88003BCCD9 /* AppDelegate.swift */,
 				0478297723D42B88003BCCD9 /* SceneDelegate.swift */,
-				0478297923D42B88003BCCD9 /* ViewController.swift */,
-				0478297B23D42B88003BCCD9 /* Main.storyboard */,
+				0478299023D43387003BCCD9 /* Model Controller */,
+				0478298D23D432E5003BCCD9 /* Model */,
+				0478298A23D43283003BCCD9 /* View Controller */,
+				0478298923D43278003BCCD9 /* View */,
 				0478297E23D42B8E003BCCD9 /* Assets.xcassets */,
 				0478298023D42B8E003BCCD9 /* LaunchScreen.storyboard */,
 				0478298323D42B8E003BCCD9 /* Info.plist */,
+				0478299123D43A12003BCCD9 /* ThemeHelper.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		0478298923D43278003BCCD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0478297B23D42B88003BCCD9 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0478298A23D43283003BCCD9 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0478297923D42B88003BCCD9 /* ViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		0478298D23D432E5003BCCD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0478298B23D432E0003BCCD9 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0478299023D43387003BCCD9 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0478298E23D43382003BCCD9 /* PhotoController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0478298F23D43382003BCCD9 /* PhotoController.swift in Sources */,
+				0478298C23D432E0003BCCD9 /* Photo.swift in Sources */,
 				0478297A23D42B88003BCCD9 /* ViewController.swift in Sources */,
+				0478299223D43A12003BCCD9 /* ThemeHelper.swift in Sources */,
 				0478297623D42B88003BCCD9 /* AppDelegate.swift in Sources */,
 				0478297823D42B88003BCCD9 /* SceneDelegate.swift in Sources */,
 			);
