@@ -145,40 +145,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="tIo-YV-0fK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="10P-gi-Cho">
+                                <rect key="frame" x="16" y="239" width="382" height="418"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQs-5U-673">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="391"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="ZNO-zc-xah"/>
+                                        </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-sc-4Xy">
-                                        <rect key="frame" x="191" y="447" width="32" height="187"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV4-ar-irX">
-                                        <rect key="frame" x="171" y="690" width="72" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Add Photo">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addPhoto:" destination="uir-Cn-Hmz" eventType="touchUpInside" id="U6f-ea-chg"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tIo-YV-0fK">
+                                        <rect key="frame" x="8" y="334" width="366" height="84"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-sc-4Xy">
+                                                <rect key="frame" x="158" y="0.0" width="50" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="ZRV-ZJ-VCl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV4-ar-irX">
+                                                <rect key="frame" x="147" y="54" width="72" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Add Photo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addPhoto:" destination="uir-Cn-Hmz" eventType="touchUpInside" id="U6f-ea-chg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="nQs-5U-673" firstAttribute="leading" secondItem="tIo-YV-0fK" secondAttribute="leadingMargin" id="16a-wl-g51"/>
+                                    <constraint firstAttribute="trailing" secondItem="tIo-YV-0fK" secondAttribute="trailing" constant="8" id="cVk-gD-y5Q"/>
+                                    <constraint firstItem="tIo-YV-0fK" firstAttribute="leading" secondItem="10P-gi-Cho" secondAttribute="leading" constant="8" id="jdA-Kc-Isg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="tIo-YV-0fK" firstAttribute="centerY" secondItem="zsH-di-jkh" secondAttribute="centerY" id="Xzs-bM-Tb1"/>
-                            <constraint firstItem="tIo-YV-0fK" firstAttribute="leading" secondItem="dpY-Pt-FCy" secondAttribute="leading" id="YSA-OV-g4v"/>
-                            <constraint firstItem="tIo-YV-0fK" firstAttribute="centerX" secondItem="zsH-di-jkh" secondAttribute="centerX" id="aUk-1d-zbK"/>
-                            <constraint firstItem="tIo-YV-0fK" firstAttribute="top" secondItem="dpY-Pt-FCy" secondAttribute="top" id="nG5-ys-zWJ"/>
+                            <constraint firstItem="10P-gi-Cho" firstAttribute="centerY" secondItem="zsH-di-jkh" secondAttribute="centerY" id="SpA-wx-SgS"/>
+                            <constraint firstItem="10P-gi-Cho" firstAttribute="centerX" secondItem="zsH-di-jkh" secondAttribute="centerX" id="yaR-dW-k8w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dpY-Pt-FCy"/>
                     </view>
@@ -196,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vro-M0-r6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="-251"/>
+            <point key="canvasLocation" x="2802.898550724638" y="-251.11607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l4K-BJ-otk">
@@ -218,6 +228,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ano-cP-9O2"/>
+        <segue reference="Mhx-0I-dNZ"/>
     </inferredMetricsTieBreakers>
 </document>

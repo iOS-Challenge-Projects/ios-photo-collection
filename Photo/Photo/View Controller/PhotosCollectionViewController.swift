@@ -70,12 +70,12 @@ class PhotosCollectionViewController: UICollectionViewController {
             
             if let photoDetailVC = segue.destination as? PhotoDetailViewController {
       
-                print(sender!)
-//                let indexPath = sender as! IndexPath
-                
+                let cell = sender as? UICollectionViewCell
+                let indexPath = self.collectionView!.indexPath(for: cell!)
+               
                 photoDetailVC.themeHelper = themeHelper
                 photoDetailVC.photoController = photoController
-//                photoDetailVC.photo = photoController.photos[indexPath.row]
+                photoDetailVC.photo = photoController.photos[indexPath!.row]
                 
             }
             

@@ -49,6 +49,8 @@ class PhotoDetailViewController: UIViewController {
             guard let newPhoto = imageView.image?.pngData(), let title = textField.text else {return}
             
               photoController?.Update(photo: photo! ,data: newPhoto, name: title)
+            
+             navigationController?.popToRootViewController(animated: true)
         } else {
             
             if let newPhoto = imageView.image?.pngData() {

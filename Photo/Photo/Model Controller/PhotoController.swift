@@ -21,7 +21,13 @@ class PhotoController {
     
     
     func Update(photo: Photo, data: Data, name: String) {
-        //Pending
-        print("PhotoController update func not build yet")
+        
+        guard let index = photos.firstIndex(of: photo) else {return}
+        
+        print(index)
+        
+        photos[index] = Photo(imageData: data, title: name)
+        
+        
     }
 }
