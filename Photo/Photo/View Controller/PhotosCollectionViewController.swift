@@ -8,82 +8,90 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
-
+    
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+  
+       
     }
 
-    /*
+    override func viewWillAppear(_ animated: Bool) {
+         collectionView.reloadData()
+       
+    }
+    // MARK: UICollectionViewDataSource
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //Set number of cells
+        return photoController.photos.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
+    
+        // Configure the cell
+        let photo = photoController.photos[indexPath.item]
+
+        
+        cell.imageView.image = UIImage(data: photo.imageData)
+        cell.titleLabel.text = photo.title
+    
+        return cell
+    }
+    
+    
+    func setTheme() {
+        guard let currentTheme = themeHelper.themePreference else { return }
+        
+        if currentTheme == "Dark"{
+            collectionView.backgroundColor = UIColor.gray
+        }else if currentTheme == "Blue"{
+            collectionView.backgroundColor = UIColor.blue
+        }
+    }
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
+        
+        if segue.identifier == "DetailsSegue"{
+            
+            if let photoDetailVC = segue.destination as? PhotoDetailViewController {
+      
+                print(sender!)
+//                let indexPath = sender as! IndexPath
+                
+                photoDetailVC.themeHelper = themeHelper
+                photoDetailVC.photoController = photoController
+//                photoDetailVC.photo = photoController.photos[indexPath.row]
+                
+            }
+            
+            
+        }else if segue.identifier == "AddPhoto"{
+            if let addPhotoVC = segue.destination as? PhotoDetailViewController{
+                addPhotoVC.themeHelper = themeHelper
+                addPhotoVC.photoController = photoController
+            }
+            
+        }else if segue.identifier == "SelectThemeSegue"{
+            if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
+                selectThemeVC.themeHelper = themeHelper
+            }
+        }
         // Pass the selected object to the new view controller.
     }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
-    
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

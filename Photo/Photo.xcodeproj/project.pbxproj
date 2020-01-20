@@ -77,7 +77,6 @@
 				0478297E23D42B8E003BCCD9 /* Assets.xcassets */,
 				0478298023D42B8E003BCCD9 /* LaunchScreen.storyboard */,
 				0478298323D42B8E003BCCD9 /* Info.plist */,
-				0478299123D43A12003BCCD9 /* ThemeHelper.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -95,8 +94,8 @@
 			children = (
 				0478299323D44A2A003BCCD9 /* PhotosCollectionViewController.swift */,
 				0478299723D44E48003BCCD9 /* PhotoDetailViewController.swift */,
-				0478299523D44BF5003BCCD9 /* PhotosCollectionViewCell.swift */,
 				0478299923D45991003BCCD9 /* ThemeSelectionViewController.swift */,
+				0478299523D44BF5003BCCD9 /* PhotosCollectionViewCell.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -113,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0478298E23D43382003BCCD9 /* PhotoController.swift */,
+				0478299123D43A12003BCCD9 /* ThemeHelper.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";

@@ -13,12 +13,15 @@ class PhotoController {
     
     
     func Create(photo: Data, title: String) {
+        
         let newPhoto = Photo(imageData: photo, title: title)
+        
         photos.append(newPhoto)
     }
     
     
     func Update(photo: Photo, data: Data, name: String) {
-        //Pending 
+        //Pending
+        print("PhotoController update func not build yet")
     }
 }
