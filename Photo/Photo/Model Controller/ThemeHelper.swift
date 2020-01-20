@@ -5,6 +5,8 @@
 //  Created by FGT MAC on 1/19/20.
 //  Copyright © 2020 FGT MAC. All rights reserved.
 //
+ 
+
 
 import Foundation
 
@@ -12,14 +14,30 @@ import Foundation
 class ThemeHelper {
     let themePreferenceKey: String = "themePreferenceKey"
     
+    
+    
     //Read the value from UserDefaults
     var themePreference: String? {
         let userDefaults = UserDefaults.standard
         
         let prefValue = userDefaults.string(forKey: themePreferenceKey)
         
+       
+        
         return prefValue
     }
+    
+    
+    //Write preference for color
+    func setThemePreferenceToLight() {
+        
+        let userDefaults = UserDefaults.standard
+        
+        userDefaults.set("Light", forKey: themePreferenceKey)
+        
+ 
+    }
+    
     
     //Write preference for dark
     func setThemePreferenceToDark() {
@@ -27,16 +45,8 @@ class ThemeHelper {
         let userDefaults = UserDefaults.standard
         
         userDefaults.set("Dark", forKey: themePreferenceKey)
+        
+ 
     }
     
-    
-    //Write preference for color
-    func setThemePreferenceToBlue() {
-        
-        let userDefaults = UserDefaults.standard
-        
-        userDefaults.set("Blue", forKey: themePreferenceKey)
-    }
-    
-
 }

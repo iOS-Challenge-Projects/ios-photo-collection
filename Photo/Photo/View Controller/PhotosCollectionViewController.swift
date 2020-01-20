@@ -9,23 +9,20 @@
 import UIKit
 
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, ThemeDelegate {
     
     
     let photoController = PhotoController()
     let themeHelper = ThemeHelper()
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-       
+        setTheme()
     }
 
     override func viewWillAppear(_ animated: Bool) {
          collectionView.reloadData()
-       
     }
     // MARK: UICollectionViewDataSource
 
@@ -55,8 +52,8 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         if currentTheme == "Dark"{
             collectionView.backgroundColor = UIColor.gray
-        }else if currentTheme == "Blue"{
-            collectionView.backgroundColor = UIColor.blue
+        }else if currentTheme == "Light"{
+            collectionView.backgroundColor = UIColor.white
         }
     }
  
@@ -89,6 +86,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         }else if segue.identifier == "SelectThemeSegue"{
             if let selectThemeVC = segue.destination as? ThemeSelectionViewController {
                 selectThemeVC.themeHelper = themeHelper
+                selectThemeVC.delegate = self
             }
         }
         // Pass the selected object to the new view controller.
